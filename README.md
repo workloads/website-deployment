@@ -38,19 +38,24 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | management_region_aws | AWS-specific `Management` Region Identifier. | `string` | yes |
 | domain | Website Domain. | `string` | no |
 | github_owner | This is the target GitHub Organization. | `string` | no |
+| hugo_deploy_toml_target_branch | The name of the Git Branch to write the Hugo Deployment configuration to. | `string` | no |
+| hugo_deploy_toml_target_file | The name of the file to write the Hugo Deployment configuration to. | `string` | no |
+| hugo_deploy_toml_target_repository | The name of the repository to write the Hugo Deployment configuration file to. | `string` | no |
+| preview_subdomain | Preview Website Subdomain. | `string` | no |
 | subdomain | Website Subdomain. | `string` | no |
-| website | Object of Website Configuration Data. | <pre>object({<br>    theme_color  = string<br>    twitter_user = string<br>  })</pre> | no |
 
 ### Outputs
 
 | Name | Description |
 |------|-------------|
 | aws_cli_commands | AWS CLI Command for CloudFront operations. |
-| aws_cloudfront_aliases | Exported Attributes for `module.website.aws_cloudfront_distribution.aliases`. |
-| aws_cloudfront_domain_name | Exported Attribute for `module.website.aws_cloudfront_distribution.domain_name`. |
+| aws_cloudfront_aliases_website | Exported Attributes for `module.website.aws_cloudfront_distribution.aliases`. |
+| aws_cloudfront_domain_name_preview_website | Exported Attribute for `module.website.aws_cloudfront_distribution.domain_name`. |
+| aws_cloudfront_domain_name_website | Exported Attribute for `module.website.aws_cloudfront_distribution.domain_name`. |
 | aws_console_urls | AWS Console URLs. |
-| aws_s3_bucket | Exported Attribute for `module.website.aws_s3_bucket`. |
-| github_repositories_list | Exported List of Repositories of the `github_repositories.main` Data Source. |
+| aws_s3_bucket_preview_website | Exported Attribute for `module.preview_website.aws_s3_bucket`. |
+| aws_s3_bucket_website | Exported Attribute for `module.website.aws_s3_bucket`. |
+| github_repository_file_hugo_deploy_toml | Exported Attribute for `module.github_repository_file.hugo_deploy_toml`. |
 <!-- END_TF_DOCS -->
 
 ## Author Information

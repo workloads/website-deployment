@@ -1,0 +1,15 @@
+# This is a Terraform-managed file; manual changes will be overwritten.
+# see https://github.com/workloads/website-deployment/blob/main/templates/hugo-deploy.tftpl.toml
+
+# deployment-specific configuration, for all other config see `hugo.toml`
+# and https://gohugo.io/hosting-and-deployment/hugo-deploy/
+
+[[deployment.targets]]
+  name                     = "preview"
+  URL                      = "s3://${preview_website_bucket_name}?region=${preview_website_bucket_region}"
+  cloudFrontDistributionID = "${preview_website_cloudfront_distribution_id}"
+
+[[deployment.targets]]
+  name                     = "live"
+  URL                      = "s3://${website_bucket_name}?region=${website_bucket_region}"
+  cloudFrontDistributionID = "${website_cloudfront_distribution_id}"

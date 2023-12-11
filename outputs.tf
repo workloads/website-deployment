@@ -6,14 +6,19 @@ output "aws_cli_commands" {
   }
 }
 
-output "aws_cloudfront_aliases" {
+output "aws_cloudfront_aliases_website" {
   description = "Exported Attributes for `module.website.aws_cloudfront_distribution.aliases`."
   value       = module.website.aws_cloudfront_distribution.aliases
 }
 
-output "aws_cloudfront_domain_name" {
+output "aws_cloudfront_domain_name_website" {
   description = "Exported Attribute for `module.website.aws_cloudfront_distribution.domain_name`."
   value       = module.website.aws_cloudfront_distribution.domain_name
+}
+
+output "aws_cloudfront_domain_name_preview_website" {
+  description = "Exported Attribute for `module.website.aws_cloudfront_distribution.domain_name`."
+  value       = module.preview_website.aws_cloudfront_distribution.domain_name
 }
 
 output "aws_console_urls" {
@@ -21,16 +26,23 @@ output "aws_console_urls" {
 
   value = [
     "https://s3.console.aws.amazon.com/s3/buckets/${module.website.aws_s3_bucket.bucket}?region=${var.management_region_aws}&tab=objects",
-    "https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=${var.management_region_aws}#/distributions/${module.website.aws_cloudfront_distribution.id}"
+    "https://s3.console.aws.amazon.com/s3/buckets/${module.preview_website.aws_s3_bucket.bucket}?region=${var.management_region_aws}&tab=objects",
+    "https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=${var.management_region_aws}#/distributions/${module.website.aws_cloudfront_distribution.id}",
+    "https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=${var.management_region_aws}#/distributions/${module.preview_website.aws_cloudfront_distribution.id}",
   ]
 }
 
-output "aws_s3_bucket" {
+output "aws_s3_bucket_website" {
   description = "Exported Attribute for `module.website.aws_s3_bucket`."
   value       = module.website.aws_s3_bucket.bucket
 }
 
-output "github_repositories_list" {
-  description = "Exported List of Repositories of the `github_repositories.main` Data Source."
-  value       = data.github_repositories.main
+output "aws_s3_bucket_preview_website" {
+  description = "Exported Attribute for `module.preview_website.aws_s3_bucket`."
+  value       = module.preview_website.aws_s3_bucket.bucket
+}
+
+output "github_repository_file_hugo_deploy_toml" {
+  description = "Exported Attribute for `module.github_repository_file.hugo_deploy_toml`."
+  value = github_repository_file.hugo_deploy_toml
 }
