@@ -11,7 +11,7 @@ locals {
 # see https://registry.terraform.io/modules/ksatirli/cloudfront-website/aws/1.2.0
 module "website" {
   source  = "ksatirli/cloudfront-website/aws"
-  version = "1.2.0"
+  version = "1.3.0"
 
   # see https://developer.hashicorp.com/terraform/language/providers/configuration#alias-multiple-provider-configurations
   providers = {
@@ -23,6 +23,8 @@ module "website" {
     var.domain
   ]
 
+  cloudfront_custom_error_responses = var.custom_error_responses
+
   domain_name    = var.domain
   subdomain_name = var.subdomain
 
@@ -33,7 +35,7 @@ module "website" {
 # see https://registry.terraform.io/modules/ksatirli/cloudfront-website/aws/1.2.0
 module "preview_website" {
   source  = "ksatirli/cloudfront-website/aws"
-  version = "1.2.0"
+  version = "1.3.0"
 
   # see https://developer.hashicorp.com/terraform/language/providers/configuration#alias-multiple-provider-configurations
   providers = {
@@ -42,6 +44,8 @@ module "preview_website" {
   }
 
   alternate_subdomain_names = []
+
+  cloudfront_custom_error_responses = var.custom_error_responses
 
   domain_name    = var.domain
   subdomain_name = var.preview_subdomain

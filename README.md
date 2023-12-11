@@ -36,6 +36,7 @@ For more information, including detailed usage guidelines, see the [Terraform do
 |------|-------------|------|:--------:|
 | github_token | This is the GitHub Token. | `string` | yes |
 | management_region_aws | AWS-specific `Management` Region Identifier. | `string` | yes |
+| custom_error_responses | List of Custom Error Response Element Objects for the distribution. | <pre>list(object({<br>    error_caching_min_ttl = optional(number)<br>    error_code            = number<br>    response_code         = optional(number)<br>    response_page_path    = optional(string)<br>  }))</pre> | no |
 | domain | Website Domain. | `string` | no |
 | github_owner | This is the target GitHub Organization. | `string` | no |
 | hugo_deploy_toml_target_branch | The name of the Git Branch to write the Hugo Deployment configuration to. | `string` | no |

@@ -1,3 +1,23 @@
+# see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution#custom-error-response-arguments
+variable "custom_error_responses" {
+  type = list(object({
+    error_caching_min_ttl = optional(number)
+    error_code            = number
+    response_code         = optional(number)
+    response_page_path    = optional(string)
+  }))
+
+  description = "List of Custom Error Response Element Objects for the distribution."
+
+  default = [
+    {
+      error_code         = 404
+      response_code      = 404
+      response_page_path = "/404.html"
+    }
+  ]
+}
+
 variable "domain" {
   type        = string
   description = "Website Domain."
