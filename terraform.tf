@@ -8,7 +8,7 @@ terraform {
     # see https://app.terraform.io/app/workloads/website
     # and https://developer.hashicorp.com/terraform/cli/cloud/settings#workspaces
     workspaces {
-      name = "website"
+      name = "website-deployment"
     }
   }
 

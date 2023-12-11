@@ -19,14 +19,14 @@ module "website" {
     aws.certificate = aws.certificate
   }
 
-  s3_bucket_name = local.bucket_name_website
-
   alternate_subdomain_names = [
     var.domain
   ]
 
   domain_name    = var.domain
   subdomain_name = var.subdomain
+
+  s3_bucket_name = local.bucket_name_website
 }
 
 # preview website; likely to be located at `preview.${var.domain}`
@@ -41,10 +41,11 @@ module "preview_website" {
     aws.certificate = aws.certificate
   }
 
-  s3_bucket_name = local.bucket_name_preview_website
-
   alternate_subdomain_names = []
 
   domain_name    = var.domain
   subdomain_name = var.preview_subdomain
+
+  s3_bucket_name = local.bucket_name_preview_website
 }
+

@@ -60,7 +60,7 @@ For more information, including detailed usage guidelines, see the [Terraform do
 
 ## Author Information
 
-This repository is maintained by the contributors listed on [GitHub](https://github.com/workloads/website/graphs/contributors).
+This repository is maintained by the contributors listed on [GitHub](https://github.com/workloads/website-deployment/graphs/contributors).
 
 ## License
 

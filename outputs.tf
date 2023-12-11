@@ -44,5 +44,5 @@ output "aws_s3_bucket_preview_website" {
 
 output "github_repository_file_hugo_deploy_toml" {
   description = "Exported Attribute for `module.github_repository_file.hugo_deploy_toml`."
-  value = github_repository_file.hugo_deploy_toml
+  value       = github_repository_file.hugo_deploy_toml
 }
