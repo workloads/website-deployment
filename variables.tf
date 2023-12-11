@@ -16,10 +16,7 @@ variable "github_token" {
   sensitive   = true
 }
 
-variable "fontawesome_identifier" {
   type        = string
-  description = "Font Awesome Kit Identifier."
-  default     = "f8764d0198"
 }
 
 variable "management_region_aws" {

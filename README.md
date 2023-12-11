@@ -17,7 +17,7 @@
 
 ## Requirements
 
-- HashiCorp Terraform `1.5.x` or [newer](https://developer.hashicorp.com/packer/downloads)
+- HashiCorp Terraform `1.6.x` or [newer](https://developer.hashicorp.com/packer/downloads)
 
 Optional, and only needed for documentation generation:
 
@@ -37,7 +37,6 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | github_token | This is the GitHub Token. | `string` | yes |
 | management_region_aws | AWS-specific `Management` Region Identifier. | `string` | yes |
 | domain | Website Domain. | `string` | no |
-| fontawesome_identifier | Font Awesome Kit Identifier. | `string` | no |
 | github_owner | This is the target GitHub Organization. | `string` | no |
 | subdomain | Website Subdomain. | `string` | no |
 | website | Object of Website Configuration Data. | <pre>object({<br>    theme_color  = string<br>    twitter_user = string<br>  })</pre> | no |
