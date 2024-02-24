@@ -1,6 +1,6 @@
 # Terraform Cloud Workspace `website`
 
-> This directory manages Website Configuration for [@workloads](https://github.com/workloads).
+> This repository manages website configuration for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
@@ -8,20 +8,25 @@
 * [Terraform Cloud Workspace `website`](#terraform-cloud-workspace-website)
   * [Table of Contents](#table-of-contents)
   * [Requirements](#requirements)
+    * [Development](#development)
   * [Usage](#usage)
     * [Inputs](#inputs)
     * [Outputs](#outputs)
-  * [Author Information](#author-information)
+  * [Notes](#notes)
+    * [Sensitive Data](#sensitive-data)
+  * [Contributors](#contributors)
   * [License](#license)
 <!-- TOC -->
 
 ## Requirements
 
-- HashiCorp Terraform `1.6.x` or [newer](https://developer.hashicorp.com/packer/downloads)
+- HashiCorp Terraform `1.6.x` or [newer](https://developer.hashicorp.com/terraform/downloads)
 
-Optional, and only needed for documentation generation:
+### Development
 
-- `terraform-docs` `0.16.0` or [newer](https://terraform-docs.io/user-guide/installation/)
+For development and testing of this repository:
+
+- `terraform-docs` `0.17.0` or [newer](https://terraform-docs.io/user-guide/installation/)
 
 ## Usage
 
@@ -59,16 +64,20 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | github_repository_file_hugo_deploy_toml | Exported Attribute for `module.github_repository_file.hugo_deploy_toml`. |
 <!-- END_TF_DOCS -->
 
-## Author Information
+## Notes
 
-This repository is maintained by the contributors listed on [GitHub](https://github.com/workloads/website-deployment/graphs/contributors).
+### Sensitive Data
+
+Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspace uses [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
+
+## Contributors
+
+For a list of current (and past) contributors to this repository, see [GitHub](https://github.com/workloads/website-deployment/graphs/contributors).
 
 ## License
 
 Licensed under the Apache License, Version 2.0 (the "License").
 
-You may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an _"AS IS"_ basis, without WARRANTIES or conditions of any kind, either express or implied.
+You may download a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 See the License for the specific language governing permissions and limitations under the License.
