@@ -1,4 +1,4 @@
-# Terraform Cloud Workspace `website`
+# HCP Terraform Workspace `website`
 
 > This repository manages website configuration for [@workloads](https://github.com/workloads).
 
