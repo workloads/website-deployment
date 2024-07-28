@@ -2,6 +2,6 @@
 data "tfe_workspace" "main" {
   provider = tfe.viewer
 
-  name         = "website-deployments"
+  name         = "website-deployment"
   organization = "workloads"
 }
