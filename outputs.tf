@@ -46,3 +46,8 @@ output "github_repository_file_hugo_deploy_toml" {
   description = "Exported Attribute for `module.github_repository_file.hugo_deploy_toml`."
   value       = github_repository_file.hugo_deploy_toml
 }
+
+output "tfe_workspace_terraform_version" {
+  description = "Terraform version identifier of current HCP Terraform Workspace."
+  value       = data.tfe_workspace.main.terraform_version
+}

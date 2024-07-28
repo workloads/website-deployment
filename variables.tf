@@ -59,14 +59,20 @@ variable "management_region_aws" {
   description = "AWS-specific `Management` Region Identifier."
 }
 
+variable "preview_subdomain" {
+  type        = string
+  description = "Preview Website Subdomain."
+  default     = "preview"
+}
+
 variable "subdomain" {
   type        = string
   description = "Website Subdomain."
   default     = "www"
 }
 
-variable "preview_subdomain" {
+variable "tfe_team_token_viewers" {
   type        = string
-  description = "Preview Website Subdomain."
-  default     = "preview"
+  description = "HCP Terraform `viewers` Team Token."
+  sensitive   = true
 }
