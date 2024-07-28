@@ -18,10 +18,10 @@ terraform {
       version = ">= 5.60.0, < 6.0.0"
     }
 
-    # see https://registry.terraform.io/providers/integrations/github/5.45.0
+    # see https://registry.terraform.io/providers/integrations/github/6.2.3
     github = {
       source  = "integrations/github"
-      version = ">= 5.45.0, < 6.0.0"
+      version = ">= 6.2.3, < 7.0.0"
     }
 
     # see https://registry.terraform.io/providers/hashicorp/random/3.6.0
